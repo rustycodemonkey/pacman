@@ -8,8 +8,44 @@ import os
 import sys
 
 
-# class Pacman:
-#     def __init__(self):
+class Pacman:
+    def __init__(self, board_dimension, initial_position, walls):
+        self.board_dimension = board_dimension
+        self.initial_position = initial_position
+        self.walls = walls
+        self.current_position = initial_position
+        self.path_taken = [initial_position]
+        self.coins_collected = 0
+
+    def move(self, movement):
+        print(self.board_dimension)
+        print(self.walls)
+        print(self.current_position)
+        print(self.path_taken)
+        print(movement)
+        print("###################")
+
+        if movement == 'N':
+            pass
+
+        elif movement == 'S':
+            pass
+
+        elif movement == 'E':
+            pass
+
+        elif movement == 'W':
+            pass
+
+        else:
+            print("Incorrect movement {}. Exiting...".format(movement))
+            sys.exit()
+
+    def calc_coins(self):
+        pass
+
+    def results(self):
+        return self.current_position[0], self.current_position[1], self.coins_collected
 
 
 def pacman(input_file):
@@ -41,28 +77,33 @@ def pacman(input_file):
         initial_position = int(input_file_list[1].split(' ')[0]), int(input_file_list[1].split(' ')[1])
 
         # Movements
-        movements = input_file_list[2]
+        movements = list(input_file_list[2])
 
         # Walls
         walls_list = input_file_list[3:]
         walls = [(int(wall.split(' ')[0]), int(wall.split(' ')[1])) for wall in walls_list]
 
-        print(board_dimension)
-        print(initial_position)
-        print(movements)
-        print(walls)
+        # (10, 10)
+        # (13, 13)
+        # ['N', 'N', 'N', 'E', 'S', 'E', 'N', 'N', 'W', 'E', 'S', 'E', 'S', 'S', 'W', 'S', 'S', 'E', 'N', 'N', 'E', 'N', 'N', 'E', 'E', 'E', 'E', 'S', 'E', 'S', 'S', 'W', 'W', 'S', 'W', 'S', 'E', 'S', 'S']
+        # [(1, 7), (1, 8), (2, 5), (3, 4), (3, 5), (3, 6), (3, 7), (5, 6), (5, 7), (7, 3), (8, 4), (9, 4)]
+        # print(board_dimension)
+        # print(initial_position)
+        # print(movements)
+        # print(walls)
+        # print("###############################")
 
+    # Initialise a Pacman object using inputs
+    pm = Pacman(board_dimension, initial_position, walls)
 
+    # Move Pacman according to input movements
+    for movement in movements:
+        pm.move(movement)
 
-        # line = fp.readline()
-        # print(line)
-        #
-        # line = fp.readline()
-        # print(line)
+    # Calculate the coins collected
+    pm.calc_coins()
 
-        print("###############################")
-
-    # pm = Pacman()
+    print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
 
     # return final_pos_x, final_pos_y, coins_collected
-    return 1, 2, 3
+    return pm.results()
