@@ -6,7 +6,7 @@ The output produces the last position of Pacman's (X, Y) coordinates and the num
 This code was cloned from https://github.com/c3ai/pacman and then modified as a solution to a technical quiz.
 
 Please note:
-    Debugging statements were not removed so that the code reviewer can see how it the code was tested/developed.
+    Debugging statements were not removed so that the code reviewer can see how the code was tested/developed.
 
 Last Modified: November 21, 2019
 
@@ -191,7 +191,7 @@ class Pacman:
 
 def pacman(input_file):
     """ Use this function to format your input/output arguments. Be sure not to change the order of the output arguments. 
-    Remember that code organization is very important to us, so we encourage the use of helper fuctions and classes as you see fit.
+    Remember that code organization is very important to us, so we encourage the use of helper functions and classes as you see fit.
     
     Args:
         1. input_file (String) = contains the name of a text file you need to read that is in the same directory, includes the ".txt" extension
