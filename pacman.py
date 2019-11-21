@@ -5,8 +5,14 @@ The output produces the last position of Pacman's (X, Y) coordinates and the num
 
 This code was cloned from https://github.com/c3ai/pacman and then modified as a solution to a technical quiz.
 
-Please note:
+Note to the code reviewer:
     Debugging statements were not removed so that the code reviewer can see how the code was tested/developed.
+
+    There is a symbolic link created in test_files/py_test directory for this file. That is, this code and
+    the test cases work without moving any files around as required. However, if the provided zip file
+    is unzipped on an operating system which doesn't support symbolic links then you must copy(and overwrite) this
+    file into test_files/py_test directory manually to run the test cases. Having multiple copies of the same file in
+    a repository is not a good code organisation practice. Hence, I did not copy this file into the testing directory.
 
 Last Modified: November 21, 2019
 
